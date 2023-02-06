@@ -20,6 +20,10 @@ h3 {
     text-align: center;
 }
 
+canvas {
+    position: absolute;
+}
+
 .canvas {
     position: absolute;
     width: 100%;
