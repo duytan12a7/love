@@ -6,6 +6,20 @@ body {
     background: #000;
 }
 
+h2 {
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+    color: rgb(255 255 255);
+    height: 100%;
+    font-size: 35px;
+    font-style: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-shadow: 0 0 10px rgb(225 12 168), 0 0 10px rgb(225 12 168), 0 0 10px rgb(225 12 168);
+    text-align: center;
+}
+
 h3 {
     background-color: rgb(0, 0, 0);
     width: 100%;

@@ -25,7 +25,7 @@ var canvas = document.getElementById('phaohoa'),
     limiterTotal = 5,
     limiterTick = 0,
     // this will time the auto launches of fireworks, one launch per 80 loop ticks
-    timerTotal = 10,
+    timerTotal = 5,
     timerTick = 0,
     mousedown = false,
     // mouse x coordinate,
