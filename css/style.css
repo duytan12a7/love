@@ -1,23 +1,82 @@
 html,
 body {
-    height: 100%;
-    padding: 0;
     margin: 0;
-    background: #000;
+    overflow: hidden;
+    background: #eee;
+    font-family: Courier, monospace;
+    font-size: 14px;
+    background-color: #000;
+}
+
+.effect-text {
+    font-size: 50px;
+    color: #edf2f4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer
+}
+.tiny-heart {
+    position: absolute;
+    opacity: 0;
+    background-color: #D90429;
+    box-shadow: 0px 0px 50px 4px rgba(239, 35, 60, 0.7);
+    animation: animated-heart infinite ease-in;
+}
+
+.tiny-heart:before,
+.tiny-heart:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #D90429;
+}
+
+.tiny-heart:before {
+    transform: translateX(-50%);
+}
+
+.tiny-heart:after {
+    transform: translateY(-50%);
+}
+
+@keyframes animated-heart {
+    0% {
+        opacity: 0;
+        transform: translate(0, 0) rotate(45deg)
+    }
+    50% {
+        opacity: 1;
+        transform: translate(0, -40%) rotate(45deg);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(0, -1000%) rotate(45deg);
+    }
 }
 
 h2 {
-    background-color: rgb(0, 0, 0);
+    /*background-color: rgb(0, 0, 0);*/
     width: 100%;
     color: rgb(255 255 255);
     height: 100%;
-    font-size: 35px;
+    font-size: 42px;
     font-style: bold;
     display: flex;
     align-items: center;
     justify-content: center;
     text-shadow: 0 0 10px rgb(225 12 168), 0 0 10px rgb(225 12 168), 0 0 10px rgb(225 12 168);
     text-align: center;
+}
+
+#c {
+    display: block;
+    margin: calc(50vh - 175px) auto;
 }
 
 h3 {
@@ -35,17 +94,22 @@ h3 {
 }
 
 canvas {
-    position: absolute;
+    padding-left: 0;
+    padding-right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    /*width: 800px;*/
 }
 
 .canvas {
     position: absolute;
     width: 100%;
     height: 100%;
-    animation: anim 1.5s ease-in-out infinite;
-    -webkit-animation: anim 1.5s ease-in-out infinite;
-    -o-animation: anim 1.5s ease-in-out infinite;
-    -moz-animation: anim 1.5s ease-in-out infinite;
+    /*animation: anim 1.5s ease-in-out infinite;*/
+    /*-webkit-animation: anim 1.5s ease-in-out infinite;*/
+    /*-o-animation: anim 1.5s ease-in-out infinite;*/
+    /*-moz-animation: anim 1.5s ease-in-out infinite;*/
 }
 
 #name {
@@ -158,3 +222,4 @@ canvas {
         -moz-transform: scale(0.8);
     }
 }
+
