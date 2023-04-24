@@ -1,21 +1,23 @@
 <html class="">
 
 <head>
-  <meta charset="utf-8">
-  <title>💗 Minh Anh 💗</title>
-  <link href="./css/style.css" rel="stylesheet" />
-  <link type="text/css" rel="stylesheet" charset="UTF-8"
-    href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.KYZwFsKC_3M.L.W.O/d=0/rs=AN8SPfoVJrVxxb9_IChXJC5jctFgGWhVOw/m=el_main_css">
+    <meta charset="utf-8">
+    <title>💗 Minh Anh 💗</title>
+    <link href="./css/style.css" rel="stylesheet"/>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link type="text/css" rel="stylesheet" charset="UTF-8"
+          href="https://www.gstatic.com/_/translate_http/_/ss/k=translate_http.tr.KYZwFsKC_3M.L.W.O/d=0/rs=AN8SPfoVJrVxxb9_IChXJC5jctFgGWhVOw/m=el_main_css">
 </head>
 
 <body>
-  <canvas class="canvas" id="pinkboard" width="980" height="2000"></canvas>
-  <div class="mark">
+<canvas class="canvas" id="pinkboard"></canvas>
+<canvas id="c"></canvas>
+<div class="mark">
     <h3 class="col-xs-12">Trước khi học lập trình, anh là người hướng nội</h3>
     <h3 class="col-xs-12">Sau khi học lập trình, anh là người hướng đối tượng</h3>
     <h3 class="col-xs-12">Và sau khi gặp em, anh chuyển sang hướng về em</h3>
     <h3 class="col-xs-12">💗 Minh Anh 💗</h3>
-  </div>
+</div>
   <script>
     let audio = document.createElement("audio");
     audio.src = "https://duytan12a7.github.io/love/911.mp3";
@@ -26,12 +28,35 @@
       audio.play();
     }
   </script>
-  <script type="text/javascript" src="./js/heart.js"> </script>
-  <canvas id="phaohoa">Canvas không hổ trợ trình duyệt của bạn.</canvas>
-  <script type="text/javascript" src="./js/phaohoa.js"> </script>
-  <div class="center-text">
-    <h2 class="col-xs-12">MINH ANH</h2>
-  </div>
+<script type="text/javascript" src="./js/heart.js"></script>
+<script type="text/javascript" src="./js/heart2.js"></script>
+<!--  <canvas id="phaohoa">Canvas không hổ trợ trình duyệt của bạn.</canvas>-->
+<!--  <script type="text/javascript" src="./js/phaohoa.js"> </script>-->
+<div class="effect-text">
+    <h2>Minh Anh</h2>
+</div>
+<script>
+    $(function() {
+        // Get random number between 2 ranges
+        function randomNum(m, n) {
+            m = parseInt(m);
+            n = parseInt(n);
+            return Math.floor(Math.random() * (n - m + 1)) + m;
+        }
+
+        function heartAnimation() {
+            $this = $('.effect-text');
+            var heartCount = ($this.width()/50)*5;
+            for (var i = 0; i< heartCount; i++) {
+                var heartSize = (randomNum(60, 120) / 10);
+                $this.append('<span class="tiny-heart" style="top: '+ randomNum(40, 80) +'%; left: '+ randomNum(0, 100) +'%; width: '+ heartSize +'px; height: '+ heartSize +'px ; animation-delay: -'+ randomNum(0, 3) +'s; animation-duration: '+ randomNum(2, 5) +'s"></span>')
+            }
+        }
+
+        heartAnimation();
+    })
+</script>
+
 </body>
 
 </html>
